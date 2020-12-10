@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.delete{
+    font-size: 25px;
+}
+.last{
+    margin-left: 80%;
+}
+#myTable{
+    display: none;
+}
+#yTable{
+    display: none;
+}

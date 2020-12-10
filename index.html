@@ -1,0 +1,244 @@
+<html>
+
+<head>
+    <title>javascript-task-1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <h3>PORTS</h3>
+            <div class="row mt-4">
+                <div class="col">
+                    <label for="portname">
+                        <h5>Port Name</h5>
+                    </label>
+                    <input type="text" placeholder="Port Name" name="portName" id="portName" class="form-control">
+                    <span id="portNamealert" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label for="portCode">
+                        <h5>Port Code</h5>
+                    </label>
+                    <input type="number" placeholder="Port Code" name="portCode" id="portCode" class="form-control">
+                    <span id="portCodealert" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label for="type">
+                        <h5>Type</h5>
+                    </label>
+                    <select class="form-control" id="type">
+                        <option>type 1</option>
+                        <option>type 2</option>
+                        <option>type 3</option>
+                        <option>type 4</option>
+                    </select>
+                    <span id="typealert" class="text-danger"></span>
+                </div>
+            </div>
+
+
+
+            <div class="row mt-4">
+                <div class="col">
+                    <label for="address">
+                        <h5>Address</h5>
+                    </label>
+                    <input type="text" placeholder="Address" name="address" id="address" class="form-control">
+                    <span id="addressalert" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label for="country">
+                        <h5>Country</h5>
+                    </label>
+                    <select class="form-control" id="country">
+                        <option>India</option>
+                        <option>Canada</option>
+                        <option>USA</option>
+                        <option>Singapore</option>
+                    </select>
+                    <span id="countryalert" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label for="postalCode">
+                        <h5>Postal Code</h5>
+                    </label>
+                    <input type="text" placeholder="Postal Code" name="postalCode" id="postalCode" class="form-control">
+                    <span id="postalCodealert" class="text-danger"></span>
+                </div>
+            </div>
+
+
+
+            <div class="row mt-4">
+                <div class="col">
+                    <label for="portNameinBl">
+                        <h5>Port Name in BL</h5>
+                    </label>
+                    <input type="text" placeholder="Port Name in BL" name="portNameinBl" id="portNameinBl"
+                        class="form-control">
+                    <span id="portNameinBlalert" class="text-danger"></span>
+                </div>
+                <div class="col">
+                    <label for="countryPrefixNumber">
+                        <h5>Country Prefix Number</h5>
+                    </label>
+                    <input type="text" placeholder="Country Prefix Number" name="countryPrefixNumber"
+                        id="countryPrefixNumber" class="form-control">
+                    <span id="countryPrefixNumberalert" class="text-danger"></span>
+                </div>
+
+                <div class="col">
+                    <label for="locationPrefixNumber">
+                        <h5>Location Prefix Number</h5>
+                    </label>
+                    <input type="text" placeholder="Location Prefix Number" name="locationPrefixNumber"
+                        id="locationPrefixNumber" class="form-control">
+                    <span id="locationPrefixNumberalert" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h3>Terminals</h3>
+                <div class="row mt-4">
+                    <div class="col">
+                        <label for="terminals">
+                            <h5>Terminals</h5>
+                        </label>
+                        <input type="text" placeholder="Terminals" name="terminals" id="terminals" class="form-control">
+                        <span id="terminalsalert" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label for="noOfFreeDays">
+                            <h5>No Of Free Days</h5>
+                        </label>
+                        <input type="text" placeholder="No Of Free Days" name="noOfFreeDays" id="noOfFreeDays"
+                            class="form-control">
+                        <span id="noOfFreeDaysalert" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <!-- <i class='bx bx-trash mt-5 delete' style='color:#fd5454'></i> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <table class="table mt-5" id="myTable" class="col-12">
+                        <thead>
+                            <tr>
+                                <th scope="col">Terminals</th>
+                                <th scope="col">No Of Free Days</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableId">
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <button type="submit" onclick="addTerminal()" class="btn btn-success mt-3">Add Terminal</button> -->
+            </div>
+            <div class="mt-5">
+                <h3>Depot</h3>
+                <div class="row mt-4">
+                    <div class="col">
+                        <label for="name">
+                            <h5>Name</h5>
+                        </label>
+                        <input type="text" placeholder="Name" name="name" id="name" class="form-control">
+                        <span id="namealert" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label for="freee">
+                            <h5>No Of Free Days</h5>
+                        </label>
+                        <input type="text" placeholder="No Of Free Days" name="freee" id="freee" class="form-control">
+                        <span id="noOfFreeDayalert" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label for="phone">
+                            <h5>Phone</h5>
+                        </label>
+                        <input type="number" placeholder="Phone" name="phoneNum" id="phoneNum" class="form-control">
+                        <span id="phonealert" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label for="email">
+                            <h5>E-mail</h5>
+                        </label>
+                        <input type="email" placeholder="E-mail" name="email" id="email" class="form-control">
+                        <span id="emailalert" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label for="addres">
+                            <h5>Address</h5>
+                        </label>
+                        <input type="text" placeholder="Address" name="addres" id="addres" class="form-control">
+                        <span id="addresalert" class="text-danger"></span>
+                    </div>
+
+                    <div class="col">
+                        <!-- <i class='bx bx-trash mt-5 delete' style='color:#fd5454 '></i> -->
+                    </div>
+                </div>
+                <table class="table mt-5" id="yTable" class="col-12">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">No Of Free Days</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Address</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableIdd">
+
+                    </tbody>
+                </table>
+                <!-- <button type="submit" onclick="addDepot()" class="btn btn-success mt-3">Add Depot</button> -->
+            </div>
+            <div class="row mt-5 last mb-5">
+                <button type="submit" onclick="save()" class="btn btn-success">Save</button>
+                <button type="reset" class="btn btn-danger ml-3">Cancel</button>
+            </div>
+            <table class="table mt-5" id="mTable" class="col-12">
+                <thead>
+                    <tr>
+                        <th scope="col">Port Name</th>
+                        <th scope="col">Port Code</th>
+                        <!-- <th scope="col">Type</th> -->
+                        <!-- <th scope="col">Address</th> -->
+                        <th scope="col">Country</th>
+                        <!-- <th scope="col">Postal Code</th>
+                        <th scope="col">Port Name in BL</th>
+                        <th scope="col">Country Prefix Number</th>
+                        <th scope="col">Location Prefix Number</th>
+                        <th scope="col">Terminals</th>
+                        <th scope="col">No Of Free Days</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">No Of Free Days</th>-->
+                        <th scope="col">Phone</th>
+                        <!-- <th scope="col">E-mail</th>
+                        <th scope="col">Address</th> -->
+                        <th scope="col">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody id="bodyId">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
